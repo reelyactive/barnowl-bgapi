@@ -1,0 +1,42 @@
+{
+  "name": "barnowl-bgapi",
+  "homepage": "https://github.com/reelyactive/barnowl-bgapi/",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
+  "description": "Collect ambient BLE advertising packets from BGAPI-enabled Silicon Labs devices for real-time location and sensing. We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "barnowl",
+    "Bluetooth",
+    "BGAPI",
+    "Blue Gecko",
+    "raddec"
+  ],
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "./lib/barnowlbgapi.js",
+  "scripts": {
+    "start": "node bin/barnowl-bgapi",
+    "forwarder": "node bin/barnowl-bgapi-forwarder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/barnowl-bgapi.git"
+  },
+  "dependencies": {
+    "raddec": ">=0.6.2"
+  },
+  "bugs": {
+    "url": "https://github.com/reelyactive/barnowl-bgapi/issues"
+  },
+  "contributors": [
+    {
+      "name": "Jeffrey Dungen"
+    }
+  ],
+  "license": "MIT"
+}

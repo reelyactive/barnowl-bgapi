@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const dgram = require('dgram');
+const BarnowlBgapi = require('../lib/barnowlbgapi.js');
+
+const client = dgram.createSocket('udp4');
+let barnowl = new BarnowlBgapi();
+let address = 'localhost';
+let port = 50001;
+
+if(process.argv.length > 2) {
+  address = process.argv[2];
+}
+
+barnowl.addListener(BarnowlBgapi.SerialListener, {});
+
+barnowl.on('raddec', (raddec) => {
+  let raddecHex = raddec.encodeAsHexString({ includeTimestamp: true,
+                                             includePackets: true });
+  client.send(Buffer.from(raddecHex, 'hex'), port, address, (err) => {
+    if(err) {
+      console.log('barnowl-bgapi error sending UDP packet, closing client');
+      client.close();
+    }
+  });
+});
+
+console.log('barnowl-bgapi forwarding UDP raddecs to ' + address + ':' + port);

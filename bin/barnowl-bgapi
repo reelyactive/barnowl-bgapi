@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const BarnowlBgapi = require('../lib/barnowlbgapi.js');
+
+let barnowl = new BarnowlBgapi();
+
+barnowl.addListener(BarnowlBgapi.SerialListener, {});
+
+barnowl.on('raddec', (raddec) => {
+  console.log(raddec.toFlattened());
+});
