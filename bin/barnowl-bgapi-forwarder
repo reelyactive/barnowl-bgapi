@@ -12,7 +12,7 @@ if(process.argv.length > 2) {
   address = process.argv[2];
 }
 
-barnowl.addListener(BarnowlBgapi.SerialListener, {});
+barnowl.addListener(BarnowlBgapi.SerialListener, { path: "auto" });
 
 barnowl.on('raddec', (raddec) => {
   let raddecHex = raddec.encodeAsHexString({ includeTimestamp: true,

@@ -28,7 +28,8 @@
     "url": "https://github.com/reelyactive/barnowl-bgapi.git"
   },
   "dependencies": {
-    "raddec": ">=0.6.2"
+    "raddec": ">=0.6.2",
+    "serialport": "~13.0.0"
   },
   "bugs": {
     "url": "https://github.com/reelyactive/barnowl-bgapi/issues"

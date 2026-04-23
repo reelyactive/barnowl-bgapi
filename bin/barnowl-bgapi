@@ -4,7 +4,7 @@ const BarnowlBgapi = require('../lib/barnowlbgapi.js');
 
 let barnowl = new BarnowlBgapi();
 
-barnowl.addListener(BarnowlBgapi.SerialListener, {});
+barnowl.addListener(BarnowlBgapi.SerialListener, { path: "auto" });
 
 barnowl.on('raddec', (raddec) => {
   console.log(raddec.toFlattened());
