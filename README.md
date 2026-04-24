@@ -3,6 +3,8 @@ barnowl-bgapi
 
 __barnowl-bgapi__ converts the decodings of _any_ ambient Bluetooth Low Energy devices from a BGAPI-enabled Silicon Labs device into standard developer-friendly JSON that is vendor/technology/application-agnostic.
 
+![Overview of barnowl-bgapi](https://reelyactive.github.io/barnowl-bgapi/images/overview.png)
+
 __barnowl-bgapi__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnowl-bgapi) that can run on resource-constrained edge devices.  It can [forward data](#pareto-anywhere-integration) to reelyActive's [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) open source middleware suite, and can just as easily be run standalone behind a [barnowl](https://github.com/reelyactive/barnowl) instance, as detailed in the code examples below.
 
 
