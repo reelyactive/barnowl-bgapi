@@ -49,7 +49,7 @@ As output you should see a stream of [raddec](https://github.com/reelyactive/rad
       numberOfDecodings: 1
     }
   ],
-  packets: [ '0201061bff99040510f4412ac5c401b8fca4011c9256954303f8846c38d057' ],
+  packets: [ '402555daba50e1fe0201061bff99040510f4412ac5c401b8fca4011c9256954303f8846c38d057' ],
   timestamp: 1777037147513
 }
 ```
