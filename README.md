@@ -57,6 +57,52 @@ As output you should see a stream of [raddec](https://github.com/reelyactive/rad
 Regardless of the underlying RF protocol and hardware, the [raddec](https://github.com/reelyactive/raddec/) specifies _what_ (transmitterId) is _where_ (receiverId & rssi), as well as _how_ (packets) and _when_ (timestamp).
 
 
+Is that owl you can do?
+-----------------------
+
+While __barnowl-bgapi__ may suffice standalone for simple real-time applications, its functionality can be greatly extended with the following software packages:
+- [advlib](https://github.com/reelyactive/advlib) to decode the individual packets from hexadecimal strings into JSON
+- [barnowl](https://github.com/reelyactive/barnowl) to combine parallel streams of RF decoding data in a technology-and-vendor-agnostic way
+
+These packages and more are bundled together as the [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere) open source middleware suite, which includes several __barnowl-x__ listeners.
+
+
+Supported Listener Interfaces
+-----------------------------
+
+The following listener interfaces are supported.
+
+### Serial
+
+```javascript
+barnowl.addListener(BarnowlReel.SerialListener, { path: 'auto' });
+```
+
+### Test
+
+Provides a steady stream of simulated reel packets for testing purposes.
+
+```javascript
+barnowl.addListener(BarnowlBgapi.TestListener, {});
+```
+
+
+Pareto Anywhere Integration
+---------------------------
+
+__barnowl-bgapi__ includes a script to forward data to a local [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/) instance as UDP raddecs with target localhost:50001.  Start this script with the command:
+
+    npm run forwarder
+
+See our [Run Pareto Anywhere on a Raspberry Pi](https://reelyactive.github.io/diy/pareto-anywhere-pi/#step02) and [Run Pareto Anywhere on a PC](https://reelyactive.github.io/diy/pareto-anywhere-pc/#step02) tutorials for instructions on how to run __barnowl-bgapi__ as a systemd service on boot on a Raspberry Pi or PC, respectively.
+
+To instead forward UDP raddecs to a _remote_ Pareto Anywhere instance, start this script with the command:
+
+    npm run forwarder xxx.xxx.xxx.xxx
+
+where xxx.xxx.xxx.xxx is the IP address of the remote instance.
+
+
 Contributing
 ------------
 
